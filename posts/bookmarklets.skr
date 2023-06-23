@@ -1,0 +1,119 @@
+(post
+ :title "Bookmarklets: Execute JavaScript from your bookmark bar!"
+ :date (make-date* 2023 06 21 16 40)
+ :tags '("programming" "web")
+
+ (p [TLDR: I basically only use these for video speed control and skipping
+	   ads, but there are much more creative things to be done with them.
+	   You can skip to a list of ,(anchor [bookmarklets I use] "#useful-snippets"), or
+	   read on for some background.])
+
+ (h3 [Bookmarklets: Intro])
+
+ (p [,(anchor [Bookmarklets] "https://en.wikipedia.org/wiki/Bookmarklet") are bookmarks
+     that execute JavaScript code, instead of pointing to a resource on the web.
+     Since they're not really ,(em [links]), they won't change the page you're currently on;
+     instead, they will simply execute the code contained inside, and leave your browser
+     pointing where it's currently pointing.])
+
+ (p [I personally use bookmarklets to have convenient, cross-site speed control for
+       videos I play; I mostly use this for YouTube videos.  Not only does it provide
+       a faster way to control speed, but it also allows conveniently changing to a speed
+       greater than 2×, which is typically the highest the UI will provide.])
+
+ (p [There are lots of useful things you can do with bookmarklets.  For
+	   inspiration, check out this list of
+	   ,(anchor [bookmarklet-related GitHub repositories]
+		    "https://github.com/topics/bookmarklets").])
+
+ (h3 [Basic template])
+
+ (p [As explained below, you'll want to make sure your snippet returns an
+	undefined type.  The basic idea here is to create an anonymous function.
+	The function body will include your snippet source code, and you'll immediately
+	execute the funtion.])
+
+ (p [One possible structure then looks like this:
+
+	 ,(pre (code [javacript: (() => { <your code here> })()]))
+
+	 The snippet above defines an anonymous
+	 ,(anchor [arrow function] "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions")
+	 containing your code, and immediately executes that function,
+	 returning an undefined type.  Just place your JavaScript code
+	 between the braces, and you're off to the races!])
+
+ (h3 [Aside: URIs and syntax])
+
+ (p [When I initially encountered bookmarklets, I took the ,(code [javascript:]) as
+	  a magic syntactical invocation, and I even (probably incorrectly)
+	  recalled reading that this particular bit of syntax was browser-specific.
+	  More accurately, as the
+	  ,(anchor [Wikipedia article] "https://en.wikipedia.org/wiki/Bookmarklet")
+	  explains, it's a special
+	  ,(anchor [URI scheme] "https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax").])
+
+ (p [Additionally, as a small aside, you should ensure your JS snippet returns an
+		   undefined type.  This will ensure your "link" doesn't take you to
+		   a new page.  If you don't ensure this, the browser will run your
+		   snippet, and use the resulting string as the new page.])
+
+ (h3 '(@ (id "useful-snippets")) [Useful snippets])
+
+ (p [Here's a few bookmarklets I personally use.  Just like any link on the
+	    web, you can right-click these and choose to "bookmark" the link- that
+	    will actually save the bookmarklet, and allow you to execute the
+	    JavaScript snippet by clicking the bookmark.]
+
+    (aside [,(strong [Important note:]) You really shouldn't execute code someone sends
+		 you over the Internet without vetting it first; take a minute to
+		 look over the target URL of these links to get a sense of what
+		 they do before you save and execute them.]))
+
+ (h4 [Video speed control])
+
+ (p [These bookmarklets let you change the speed of a currently playing
+	   video.  They've been tested on YouTube, and should work for other
+	   similar platforms.]
+
+    (ul (li (anchor [0.5×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 0.5})()"))
+	(li (anchor [1×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 1.0})()"))
+	(li (anchor [1.5×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 1.5})()"))
+	(li (anchor [2×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 2.0})()"))
+	(li (anchor [2.5×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 2.5})()"))
+	(li (anchor [3×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 3.0})()"))
+	(li (anchor [3.5×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 3.5})()"))
+	(li (anchor [4×]
+		    "javascript: (() => {document.querySelector('video').playbackRate = 4.0})()")))
+
+    [Note that the code here isn't particularly complicated; I've provided
+	  different speeds here not because it's hard to change the code to the
+	  speed you want, but just for convenience when adding them to your
+	  browser.])
+
+ (h4 [Skip video])
+
+ (p [This bookmarklet lets you skip to the end of a video.  This is not
+	  very useful in situations where you have scrubbing controls, but it
+	  can be useful if you don't have those (e.g., ads 😉)]
+
+    (ul
+     (li
+      (anchor [Skip Video]
+	      "javascript: (() => {document.querySelector('video').currentTime = document.querySelector('video').duration})()"))))
+
+ (h3 [Make your own!])
+
+ (p [I'd love to find more interesting uses for these bookmarklets- learn
+	 some JS, experiment, and post your favorite for others to see!  I'm
+	 not personally such a huge fan of JS as a language, but one of the
+	 nice features is its availability- if you find out how to do something
+	 cool with JS, you can instantly share it with almost everyone you
+	 know.  Happy hacking!]))
