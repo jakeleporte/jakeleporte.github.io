@@ -1,4 +1,4 @@
-<!DOCTYPE html><head><meta charset="utf-8" /><title>Bookmarklets: Execute JavaScript from your bookmark bar! ? Picklehead Web</title><link rel="stylesheet" href="/css/picklehead.css" /></head><body><nav><ul><li><a href="/index.html">Blog</a></li><li><a href="/configs.html">Configurations</a></li></ul></nav><h2>Bookmarklets: Execute JavaScript from your bookmark bar!</h2><h3>by Jake Leporte ? Wed 21 June 2023</h3><div><p>TLDR: I basically only use these for video speed control and skipping
+<!DOCTYPE html><head><meta charset="utf-8" /><title>Bookmarklets: Execute JavaScript from your bookmark bar! — Picklehead Web</title><link rel="stylesheet" href="/css/picklehead.css" /></head><body><nav><ul><li><a href="/index.html">Blog</a></li><li><a href="/configs.html">Configurations</a></li></ul></nav><h2>Bookmarklets: Execute JavaScript from your bookmark bar!</h2><h3>by Jake Leporte — Wed 21 June 2023</h3><div><p>TLDR: I basically only use these for video speed control and skipping
 	   ads, but there are much more creative things to be done with them.
 	   You can skip to a list of <a href="#useful-snippets">bookmarklets I use</a>, or
 	   read on for some background.</p><h3>Bookmarklets: Intro</h3><p><a href="https://en.wikipedia.org/wiki/Bookmarklet">Bookmarklets</a> are bookmarks
@@ -8,7 +8,7 @@
      pointing where it's currently pointing.</p><p>I personally use bookmarklets to have convenient, cross-site speed control for
        videos I play; I mostly use this for YouTube videos.  Not only does it provide
        a faster way to control speed, but it also allows conveniently changing to a speed
-       greater than 2?, which is typically the highest the UI will provide.</p><p>There are lots of useful things you can do with bookmarklets.  For
+       greater than 2×, which is typically the highest the UI will provide.</p><p>There are lots of useful things you can do with bookmarklets.  For
 	   inspiration, check out this list of
 	   <a href="https://github.com/topics/bookmarklets">bookmarklet-related GitHub repositories</a>.</p><h3>Basic template</h3><p>As explained below, you'll want to make sure your snippet returns an
 	undefined type.  The basic idea here is to create an anonymous function.
@@ -38,12 +38,12 @@
 		 look over the target URL of these links to get a sense of what
 		 they do before you save and execute them.</aside></p><h4>Video speed control</h4><p>These bookmarklets let you change the speed of a currently playing
 	   video.  They've been tested on YouTube, and should work for other
-	   similar platforms.<ul><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 0.5})()">0.5?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 1.0})()">1?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 1.5})()">1.5?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 2.0})()">2?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 2.5})()">2.5?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 3.0})()">3?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 3.5})()">3.5?</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 4.0})()">4?</a></li></ul>Note that the code here isn't particularly complicated; I've provided
+	   similar platforms.<ul><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 0.5})()">0.5×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 1.0})()">1×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 1.5})()">1.5×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 2.0})()">2×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 2.5})()">2.5×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 3.0})()">3×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 3.5})()">3.5×</a></li><li><a href="javascript: (() =&gt; {document.querySelector('video').playbackRate = 4.0})()">4×</a></li></ul>Note that the code here isn't particularly complicated; I've provided
 	  different speeds here not because it's hard to change the code to the
 	  speed you want, but just for convenience when adding them to your
 	  browser.</p><h4>Skip video</h4><p>This bookmarklet lets you skip to the end of a video.  This is not
 	  very useful in situations where you have scrubbing controls, but it
-	  can be useful if you don't have those (e.g., ads ?)<ul><li><a href="javascript: (() =&gt; {document.querySelector('video').currentTime = document.querySelector('video').duration})()">Skip Video</a></li></ul></p><h3>Make your own!</h3><p>I'd love to find more interesting uses for these bookmarklets- learn
+	  can be useful if you don't have those (e.g., ads 😉)<ul><li><a href="javascript: (() =&gt; {document.querySelector('video').currentTime = document.querySelector('video').duration})()">Skip Video</a></li></ul></p><h3>Make your own!</h3><p>I'd love to find more interesting uses for these bookmarklets- learn
 	 some JS, experiment, and post your favorite for others to see!  I'm
 	 not personally such a huge fan of JS as a language, but one of the
 	 nice features is its availability- if you find out how to do something
